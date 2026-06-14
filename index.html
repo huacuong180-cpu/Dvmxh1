@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nghệ sĩ 36 - Từ TikToker đến ông chủ dịch vụ mạng xã hội kiếm 300 triệu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.5;
+        }
+        /* Header & Navigation */
+        header {
+            background: #0a0c10;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            border-bottom: 3px solid #d4af37;
+        }
+        .logo {
+            font-size: 28px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            color: #d4af37;
+            letter-spacing: 1px;
+        }
+        .search-box input {
+            padding: 10px 18px;
+            width: 260px;
+            border: none;
+            border-radius: 40px;
+            background: #1e293b;
+            color: white;
+            outline: none;
+        }
+        nav {
+            background: white;
+            padding: 12px 8%;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        nav a {
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        nav a:hover { color: #d4af37; }
+        /* Hero Section đặc biệt cho Nghệ sĩ 36 */
+        .hero-artist {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: white;
+            padding: 50px 8%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-left {
+            flex: 1;
+        }
+        .hero-left .badge {
+            background: #d4af37;
+            color: #0f172a;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+        .hero-left h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero-left p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+        .stats-row {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .stat-item {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(4px);
+            padding: 12px 20px;
+            border-radius: 28px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #d4af37;
+        }
+        .hero-right {
+            flex: 0.7;
+            background: rgba(0,0,0,0.3);
+            border-radius: 32px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(212,175,55,0.4);
+        }
+        .hero-right img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 50%;
+            border: 4px solid #d4af37;
+            margin-bottom: 15px;
+        }
+        .hero-right h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        .hero-right .social-handle {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        /* Nội dung chính */
+        .container {
+            padding: 50px 8%;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 40px;
+        }
+        .article {
+            background: white;
+            border-radius: 32px;
+            padding: 32px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+        }
+        .article h2 {
+            font-size: 1.8rem;
+            margin: 25px 0 15px;
+            border-left: 6px solid #d4af37;
+            padding-left: 18px;
+        }
+        .article p {
+            margin-bottom: 20px;
+            color: #334155;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        .money-highlight {
+            background: linear-gradient(95deg, #fef9e3, #fff4d2);
+            padding: 20px;
+            border-radius: 24px;
+            border-left: 6px solid #d4af37;
+            margin: 30px 0;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #b45309;
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .service-card {
+            background: #f1f5f9;
+            border-radius: 24px;
+            padding: 20px;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .service-card i {
+            font-size: 2.2rem;
+            color: #d4af37;
+            margin-bottom: 12px;
+        }
+        .service-card h4 {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .price {
+            color: #2563eb;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+        .testimonial {
+            background: #0f172a;
+            color: white;
+            padding: 25px;
+            border-radius: 28px;
+            margin: 25px 0;
+        }
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        .widget {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+        .widget h3 {
+            font-size: 1.4rem;
+            border-left: 5px solid #d4af37;
+            padding-left: 12px;
+            margin-bottom: 20px;
+        }
+        .social-stats {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            border-radius: 28px;
+            padding: 24px;
+        }
+        .social-stats .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+        .footer {
+            background: #0a0c10;
+            color: #aaa;
+            padding: 40px 8%;
+            margin-top: 50px;
+            text-align: center;
+        }
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .hero-left h1 { font-size: 2.2rem; }
+            .stats-row { flex-wrap: wrap; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">TIN TỨC & NGHỆ SĨ</div>
+    <div class="search-box"><input type="text" placeholder="Tìm kiếm câu chuyện..."></div>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#">TRANG CHỦ</a></li>
+        <li><a href="#">THỜI SỰ</a></li>
+        <li><a href="#">KINH DOANH</a></li>
+        <li><a href="#">MẠNG XÃ HỘI</a></li>
+        <li><a href="#">NHÂN VẬT</a></li>
+        <li><a href="#">DỊCH VỤ SỐ</a></li>
+    </ul>
+</nav>
+
+<!-- HERO: Nghệ sĩ 36 -->
+<section class="hero-artist">
+    <div class="hero-left">
+        <div class="badge">🔥 ĐỘC QUYỀN 🔥</div>
+        <h1>Nghệ sĩ 36: Từ TikToker “cơm áo” đến ông chủ dịch vụ mạng xã hội thu nhập 300 triệu/tháng</h1>
+        <p>Chỉ với chiếc điện thoại và am hiểu thuật toán, Hứa Mạnh Cường (Nghệ sĩ 36) đã xây dựng đế chế dịch vụ tăng tương tác, giúp hàng trăm KOL, doanh nghiệp bùng nổ trên TikTok, Facebook.</p>
+        <div class="stats-row">
+            <div class="stat-item"><span class="stat-number">300+</span><br>Triệu đồng/tháng</div>
+            <div class="stat-item"><span class="stat-number">5.571</span><br>Lượt thích cá nhân</div>
+            <div class="stat-item"><span class="stat-number">505</span><br>Đã follow</div>
+        </div>
+    </div>
+    <div class="hero-right">
+        <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Nghệ sĩ 36">
+        <h3>Nghệ sĩ 36.</h3>
+        <div class="social-handle">🎭 @huamanhcuong7</div>
+        <div style="margin-top: 15px;"><i class="fab fa-tiktok"></i> <i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i></div>
+    </div>
+</section>
+
+<div class="container">
+    <main class="article">
+        <p><strong>Hà Nội, ngày 15/06/2025</strong> – Ít ai biết rằng, đằng sau nghệ danh "Nghệ sĩ 36" là một chàng trai 25 tuổi với doanh thu 300 triệu đồng mỗi tháng từ cung cấp các gói dịch vụ mạng xã hội: buff follow, like, view, comment, tiếp cận target chân thực. Từ con số 0, Hứa Mạnh Cường đã tạo dựng uy tín nhờ chất lượng dịch vụ và sự minh bạch.</p>
+        
+        <div class="money-highlight">
+            📢 "Chỉ trong 6 tháng đầu năm 2025, tôi đã chốt hơn 400 đơn hàng từ các chủ shop, nghệ sĩ, DN vừa và nhỏ. Con số 300 triệu không phải là mơ – đó là giá trị tôi tạo ra cho khách hàng!"
+        </div>
+
+        <h2>🚀 Hành trình từ cậu bé làm nội dung TikTok</h2>
+        <p>Năm 2022, Hứa Mạnh Cường bắt đầu đăng những video hài hước, mẹo vặt. Dần dần nhận ra nhu cầu tăng tương tác của cộng đồng quá lớn, anh chuyển hướng cung cấp dịch vụ mạng xã hội bài bản. Với team 5 cộng tác viên, Nghệ sĩ 36 tự hào có tỷ lệ giữ chân khách hàng lên tới 85% nhờ giao diện quản lý minh bạch và hỗ trợ 24/7.</p>
+
+        <h2>📊 Bảng giá dịch vụ “tối ưu ROI”</h2>
+        <div class="service-grid">
+            <div class="service-card"><i class="fab fa-tiktok"></i><h4>Follow TikTok</h4><div class="price">500đ / follow</div><small>thả thính, bền đẹp</small></div>
+            <div class="service-card"><i class="fas fa-heart"></i><h4>Tim / Like</h4><div class="price">300đ / like</div><small>tương tác thật</small></div>
+            <div class="service-card"><i class="fas fa-eye"></i><h4>Xem video</h4><div class="price">200đ / 1k view</div><small>tăng xu hướng</small></div>
+            <div class="service-card"><i class="fas fa-comment"></i><h4>Comment bản quyền</h4><div class="price">800đ / comment</div><small>nội dung cá nhân hoá</small></div>
+        </div>
+
+        <h2>✅ Khách hàng nói gì?</h2>
+        <div class="testimonial">
+            <i class="fas fa-quote-left" style="font-size: 1.8rem; opacity: 0.6;"></i>
+            <p style="margin-top: 12px;">“Tôi đã thử nhiều nơi nhưng chỉ có Nghệ sĩ 36 giữ đúng cam kết. Tài khoản của tôi tăng 20k follow chỉ sau 1 tuần, doanh số bán hàng tăng gấp 3 lần. 10/10.”</p>
+            <div style="margin-top: 15px;"><strong>— Chị Minh Anh (chủ shop thời trang)</strong></div>
+        </div>
+
+        <p>Không chỉ dừng ở đó, Nghệ sĩ 36 còn xây dựng cộng đồng “Hội làm giàu MXH” với hơn 5.000 thành viên, nơi chia sẻ chiến lược tăng trưởng miễn phí. Anh cũng hợp tác với nhiều agency để tối ưu chi phí quảng cáo cho các thương hiệu lớn như OPPO, Sunsilk, Cocoon.</p>
+        <p>Với phương châm “khách hàng thành công thì mình mới bền vững”, Hứa Mạnh Cường đang từng bước khẳng định tên tuổi trong lĩnh vực dịch vụ số tại Việt Nam. Nếu bạn đang cần bứt phá trên TikTok, hãy liên hệ ngay với Nghệ sĩ 36 qua TikTok <strong>@huamanhcuong7</strong> để được tư vấn lộ trình riêng biệt!</p>
+    </main>
+
+    <aside class="sidebar">
+        <div class="widget">
+            <h3>📈 Thông số nổi bật</h3>
+            <div class="social-stats">
+                <div class="stat-row"><span><i class="fab fa-tiktok"></i> Đã follow</span> <strong>505</strong></div>
+                <div class="stat-row"><span><i class="fas fa-users"></i> Follower</span> <strong>225</strong></div>
+                <div class="stat-row"><span><i class="fas fa-heart"></i> Thích</span> <strong>5.571</strong></div>
+                <div class="stat-row"><span><i class="fas fa-chart-line"></i> Doanh thu TB</span> <strong>300 triệu/tháng</strong></div>
+                <div class="stat-row"><span><i class="fas fa-check-circle"></i> Đơn hàng</span> <strong>400+</strong></div>
+            </div>
+        </div>
+        <div class="widget">
+            <h3>🎬 Video nổi bật</h3>
+            <div style="background: #eef2ff; border-radius: 20px; padding: 16px; text-align: center;">
+                <i class="fab fa-tiktok" style="font-size: 48px; color:#000;"></i>
+                <p style="margin-top: 8px;">Xem chiến lược kiếm 300tr của Nghệ sĩ 36 trên TikTok</p>
+                <button style="background:#d4af37; border:none; border-radius:40px; padding:8px 20px; font-weight:bold; cursor:pointer;">Xem ngay</button>
+            </div>
+        </div>
+        <div class="widget">
+            <h3>📞 Liên hệ nhanh</h3>
+            <p><i class="fab fa-facebook"></i> Facebook: fb.com/nghesi36</p>
+            <p><i class="fab fa-tiktok"></i> TikTok: @huamanhcuong7</p>
+            <p><i class="fas fa-envelope"></i> Email: huamanhcuong@social.vn</p>
+            <p><i class="fab fa-zalo"></i> Zalo: 0374 091 050</p>
+        </div>
+    </aside>
+</div>
+
+<footer class="footer">
+    <div>© 2025 Báo Tin Tức & Nghệ Sĩ - Câu chuyện truyền cảm hứng khởi nghiệp từ dịch vụ mạng xã hội. Đã đăng ký bản quyền.</div>
+    <div style="margin-top: 12px; font-size: 13px;">Thiết kế bởi Huamanhcuong Team | Nghệ sĩ 36 | 300 triệu/tháng cùng TikTok</div>
+</footer>
+
+</body>
+</html>
